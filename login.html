@@ -1,10 +1,82 @@
+ <!DOCTYPE html>
 <html>
-  <body style="background:#0D0D0D; color:white; font-family:Arial; text-align:center;">
-    <h2 style="margin-top:50px;">Login MASK STREAM</h2>
-    <input placeholder="Email" style="padding:10px; margin:5px;"><br>
-    <input placeholder="Parola" type="password" style="padding:10px; margin:5px;"><br>
-    <button style="padding:10px 20px; margin-top:10px;">Login</button>
-    <br><br>
-    <a href="index.html" style="color:#FF00E6;">Înapoi la pagina principală</a>
-  </body>
+<head>
+  <title>MASK STREAM - Conectare TikTok</title>
+  <style>
+    body {
+      background:#0D0D0D;
+      color:white;
+      font-family:Arial;
+      text-align:center;
+      margin-top:50px;
+    }
+    input {
+      padding:10px;
+      margin:5px;
+      width:250px;
+      border-radius:5px;
+      border:none;
+    }
+    button {
+      padding:10px 20px;
+      margin-top:10px;
+      background:#6A00FF;
+      color:white;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background:#FF00E6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Conectează-te la TikTok LIVE</h2>
+
+  <input id="username" placeholder="Username TikTok (fără @)">
+  <br>
+  <button onclick="connect()">Conectează</button>
+
+  <p id="status"></p>
+
+  <script>
+    let ws;
+    let clientId;
+
+    function connect() {
+      const username = document.getElementById("username").value.trim();
+      if (!username) {
+        alert("Introdu username-ul TikTok!");
+        return;
+      }
+
+      ws = new WebSocket("wss://masksteam-backend-production.up.railway.app");
+
+      ws.onopen = () => {
+        document.getElementById("status").innerText = "Conectat la backend...";
+      };
+
+      ws.onmessage = (msg) => {
+        const data = JSON.parse(msg.data);
+
+        if (data.type === "clientId") {
+          clientId = data.clientId;
+
+          ws.send(JSON.stringify({
+            type: "login",
+            username: username
+          }));
+
+          document.getElementById("status").innerText =
+            "Conectat la TikTok LIVE ca @" + username;
+        }
+
+        console.log("EVENT:", data);
+      };
+    }
+  </script>
+
+</body>
 </html>

@@ -1,140 +1,139 @@
  <html>
-<head>
-<title>MASK STREAM</title>
+  <head>
+    <title>MASK STREAM</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial;
+        color: white;
+        text-align: center;
+        background: linear-gradient(135deg, #000000, #1A0033, #330066, #6600CC);
+        background-size: 400% 400%;
+        animation: bgMove 12s ease infinite;
+      }
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial;
-    color: white;
-    background: linear-gradient(135deg, #0D0D0D, #1A0033, #330066, #6600CC);
-    background-size: 400% 400%;
-    animation: bgMove 12s ease infinite;
-  }
+      @keyframes bgMove {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+        }
 
-  @keyframes bgMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
+      .hero {
+        text-align: center;
+        padding: 80px 20px;
+      }
 
-  .hero {
-    text-align: center;
-    padding: 80px 20px;
-  }
+      .logo {
+        width: 280px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+      }
 
-  .logo {
-    width: 280px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
+      h1 {
+        font-size: 60px;
+        color: #FF00E6;
+        margin: 10px 0;
+      }
 
-  h1 {
-    font-size: 60px;
-    color: #FF00E6;
-    margin: 10px 0;
-  }
+      p.subtitle {
+        font-size: 22px;
+        color: #CCCCCC;
+        margin-bottom: 40px;
+      }
 
-  p.subtitle {
-    font-size: 22px;
-    color: #CCCCCC;
-    margin-bottom: 40px;
-  }
+      .cards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 40px;
+      }
 
-  .cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 40px;
-  }
+      .card {
+        width: 300px;
+        padding: 25px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        text-align: center;
+        transition: 0.3s;
+        border: 1px solid rgba(255,255,255,0.15);
+      }
 
-  .card {
-    width: 300px;
-    padding: 25px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.15);
-  }
+      .card:hover {
+        transform: translateY(-10px);
+        background: rgba(255,255,255,0.15);
+      }
 
-  .card:hover {
-    transform: translateY(-10px);
-    background: rgba(255,255,255,0.15);
-  }
+      .card h2 {
+        color: #FF00E6;
+        margin-bottom: 10px;
+      }
 
-  .card h2 {
-    color: #FF00E6;
-    margin-bottom: 10px;
-  }
+      .card p {
+        color: #DDDDDD;
+        font-size: 16px;
+      }
 
-  .card p {
-    color: #DDDDDD;
-    font-size: 16px;
-  }
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #6A00FF;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 18px;
+        transition: 0.3s;
+      }
 
-  .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #6A00FF;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s;
-  }
+      .btn:hover {
+        background: #FF00E6;
+      }
 
-  .btn:hover {
-    background: #FF00E6;
-  }
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #888;
+        font-size: 14px;
+      }
+    </style>
+  </head>
 
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: #888;
-    font-size: 14px;
-  }
-</style>
+  <body>
 
-</head>
+    <div class="hero">
+      <img src="https://raw.githubusercontent.com/sosoboso71/maskstream/main/MASK.jpeg" class="logo">
+      <h1>MASK STREAM</h1>
+      <p class="subtitle">Alerts & Overlays pentru TikTok LIVE</p>
+    </div>
 
-<body>
+    <div class="cards">
 
-<div class="hero">
-  <img src="https://raw.githubusercontent.com/sosoboso71/maskstream/main/MASK.jpeg" class="logo">
-  <h1>MASK STREAM</h1>
-  <p class="subtitle">Alerts & Overlays pentru TikTok LIVE</p>
-</div>
+      <div class="card">
+        <h2>Overlay LIVE</h2>
+        <p>Pagina de overlay care se va conecta la WebSocket și va afișa chat & alerte.</p>
+        <a class="btn" href="overlay.html">Deschide overlay</a>
+      </div>
 
-<div class="cards">
+      <div class="card">
+        <h2>Login (în curând)</h2>
+        <p>Pagina de autentificare pentru creatori MASK STREAM.</p>
+        <a class="btn" href="#">În curând</a>
+      </div>
 
-  <div class="card">
-    <h2>Alerts LIVE</h2>
-    <p>Notificări animate pentru gifturi, follow, share și activitate în timp real.</p>
-    <a class="btn" href="alerts.html">Deschide</a>
-  </div>
+      <div class="card">
+        <h2>Dashboard (în curând)</h2>
+        <p>Control complet al alertelor și overlay-urilor.</p>
+        <a class="btn" href="#">În curând</a>
+      </div>
 
-  <div class="card">
-    <h2>Overlays</h2>
-    <p>Elemente vizuale moderne pentru TikTok LIVE: bannere, efecte, animații.</p>
-    <a class="btn" href="overlays.html">Deschide</a>
-  </div>
+    </div>
 
-  <div class="card">
-    <h2>Dashboard</h2>
-    <p>Control complet al live‑ului tău: layout, efecte, configurări.</p>
-    <a class="btn" href="dashboard.html">Deschide</a>
-  </div>
+    <footer>
+      © 2026 MASK STREAM — Creator Tools pentru TikTok LIVE
+    </footer>
 
-</div>
-
-<footer>
-  © 2026 MASK STREAM — Creator Tools pentru TikTok LIVE
-</footer>
-
-</body>
+  </body>
 </html>

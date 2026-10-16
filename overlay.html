@@ -22,7 +22,8 @@
 
 <script>
   // ATENȚIE: aici, când backend-ul va fi online, schimbăm URL-ul
-  const ws = new WebSocket('ws://localhost:8080');
+  const ws = new WebSocket('wss://masksteam-backend-production.up.railway.app');
+
 
   ws.onmessage = (msg) => {
     const event = JSON.parse(msg.data);

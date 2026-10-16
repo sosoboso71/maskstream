@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>MASK STREAM Overlay</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #000;
+      color: #0FF;
+      font-family: Arial;
+      font-size: 18px;
+    }
+    .message {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>MASK STREAM Overlay (test WebSocket)</h2>
+<div id="chat"></div>
+
+<script>
+  // ATENȚIE: aici, când backend-ul va fi online, schimbăm URL-ul
+  const ws = new WebSocket('ws://localhost:8080');
+
+  ws.onmessage = (msg) => {
+    const event = JSON.parse(msg.data);
+
+    if (event.type === 'chat') {
+      const div = document.createElement('div');
+      div.className = 'message';
+      div.textContent = event.user + ': ' + event.text;
+      document.getElementById('chat').appendChild(div);
+    }
+  };
+</script>
+
+</body>
+</html>

@@ -1,68 +1,140 @@
-<html>
-  <head>
-    <title>MASK STREAM</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial;
-        color: white;
-        text-align: center;
-        background: linear-gradient(135deg, #000000, #1A0033, #330066, #6600CC);
-        background-size: 400% 400%;
-        animation: gradientMove 12s ease infinite;
-      }
+ <html>
+<head>
+<title>MASK STREAM</title>
 
-      @keyframes gradientMove {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-      }
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    color: white;
+    background: linear-gradient(135deg, #0D0D0D, #1A0033, #330066, #6600CC);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+  }
 
-      .logo {
-        width: 300px;
-        margin-top: 40px;
-        border-radius: 20px;
-      }
+  @keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
 
-      h1 {
-        color: #FF00E6;
-        font-size: 50px;
-        margin-top: 20px;
-      }
+  .hero {
+    text-align: center;
+    padding: 80px 20px;
+  }
 
-      p {
-        font-size: 22px;
-        color: #CCCCCC;
-      }
+  .logo {
+    width: 280px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
 
-      .btn {
-        display: inline-block;
-        padding: 15px 30px;
-        margin: 10px;
-        background: #6A00FF;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 20px;
-        transition: 0.3s;
-      }
+  h1 {
+    font-size: 60px;
+    color: #FF00E6;
+    margin: 10px 0;
+  }
 
-      .btn:hover {
-        background: #FF00E6;
-      }
-    </style>
-  </head>
+  p.subtitle {
+    font-size: 22px;
+    color: #CCCCCC;
+    margin-bottom: 40px;
+  }
 
-  <body>
-    <!-- Poza ta -->
-    <img src="https://raw.githubusercontent.com/sosoboso71/maskstream/main/MASK.jpeg" class="logo">
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px;
+  }
 
-    <h1>MASK STREAM</h1>
-    <p>Alerts & Overlays pentru TikTok LIVE</p>
+  .card {
+    width: 300px;
+    padding: 25px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
 
-    <a class="btn" href="login.html">Login</a>
-    <a class="btn" href="register.html">Register</a>
-  </body>
+  .card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.15);
+  }
+
+  .card h2 {
+    color: #FF00E6;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: #DDDDDD;
+    font-size: 16px;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #6A00FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #FF00E6;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 14px;
+  }
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+  <img src="https://raw.githubusercontent.com/sosoboso71/maskstream/main/MASK.jpeg" class="logo">
+  <h1>MASK STREAM</h1>
+  <p class="subtitle">Alerts & Overlays pentru TikTok LIVE</p>
+</div>
+
+<div class="cards">
+
+  <div class="card">
+    <h2>Alerts LIVE</h2>
+    <p>Notificări animate pentru gifturi, follow, share și activitate în timp real.</p>
+    <a class="btn" href="alerts.html">Deschide</a>
+  </div>
+
+  <div class="card">
+    <h2>Overlays</h2>
+    <p>Elemente vizuale moderne pentru TikTok LIVE: bannere, efecte, animații.</p>
+    <a class="btn" href="overlays.html">Deschide</a>
+  </div>
+
+  <div class="card">
+    <h2>Dashboard</h2>
+    <p>Control complet al live‑ului tău: layout, efecte, configurări.</p>
+    <a class="btn" href="dashboard.html">Deschide</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 MASK STREAM — Creator Tools pentru TikTok LIVE
+</footer>
+
+</body>
 </html>
- 
